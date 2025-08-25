@@ -29,7 +29,7 @@ def render() -> None:
 	WEBCAM_MODE_RADIO = gradio.Radio(
 		label = wording.get('uis.webcam_mode_radio'),
 		choices = facefusion.choices.webcam_modes,
-		value = 'inline'
+		value = 'srt'
 	)
 	WEBCAM_RESOLUTION_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.webcam_resolution_dropdown'),
