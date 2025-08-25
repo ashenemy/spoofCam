@@ -93,7 +93,7 @@ def start(webcam_device_id : int, webcam_mode : WebcamMode, webcam_resolution : 
 	stream = None
 	webcam_capture = None
 
-	if webcam_mode in [ 'udp', 'v4l2' ]:
+	if webcam_mode in [ 'srt' ]:
 		stream = open_stream(webcam_mode, webcam_resolution, webcam_fps) #type:ignore[arg-type]
 	webcam_width, webcam_height = unpack_resolution(webcam_resolution)
 
@@ -170,26 +170,11 @@ def open_stream(stream_mode : StreamMode, stream_resolution : str, stream_fps : 
 		ffmpeg_builder.set_input_fps(stream_fps)
 	)
 
-	if stream_mode == 'udp':
+	if stream_mode == 'srt':
 		commands.extend(ffmpeg_builder.set_input('-'))
-		commands.extend(ffmpeg_builder.set_stream_mode('udp'))
+		commands.extend(ffmpeg_builder.set_stream_mode('srt'))
 		commands.extend(ffmpeg_builder.set_stream_quality(2000))
-		commands.extend(ffmpeg_builder.set_output('udp://localhost:27000?pkt_size=1316'))
-
-	if stream_mode == 'v4l2':
-		device_directory_path = '/sys/devices/virtual/video4linux'
-		commands.extend(ffmpeg_builder.set_input('-'))
-		commands.extend(ffmpeg_builder.set_stream_mode('v4l2'))
-
-		if is_directory(device_directory_path):
-			device_names = os.listdir(device_directory_path)
-
-			for device_name in device_names:
-				device_path = '/dev/' + device_name
-				commands.extend(ffmpeg_builder.set_output(device_path))
-
-		else:
-			logger.error(wording.get('stream_not_loaded').format(stream_mode = stream_mode), __name__)
+		commands.extend(ffmpeg_builder.set_output('srt://localhost:27000?pkt_size=1316'))
 
 	return open_ffmpeg(commands)
 

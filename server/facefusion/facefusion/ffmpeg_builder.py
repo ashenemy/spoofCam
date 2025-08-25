@@ -49,10 +49,9 @@ def cast_stream() -> Commands:
 
 
 def set_stream_mode(stream_mode : StreamMode) -> Commands:
-	if stream_mode == 'udp':
+	if stream_mode == 'srt':
 		return [ '-f', 'mpegts' ]
-	if stream_mode == 'v4l2':
-		return [ '-f', 'v4l2' ]
+
 	return []
 
 

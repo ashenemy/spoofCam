@@ -142,8 +142,8 @@ BenchmarkCycleSet = TypedDict('BenchmarkCycleSet',
 	'relative_fps' : float
 })
 
-WebcamMode = Literal['inline', 'udp', 'v4l2']
-StreamMode = Literal['udp', 'v4l2']
+WebcamMode = Literal['inline', 'srt']
+StreamMode = Literal['srt']
 
 ModelOptions : TypeAlias = Dict[str, Any]
 ModelSet : TypeAlias = Dict[str, ModelOptions]

@@ -97,7 +97,7 @@ benchmark_set : BenchmarkSet =\
 }
 benchmark_resolutions : List[BenchmarkResolution] = list(benchmark_set.keys())
 
-webcam_modes : List[WebcamMode] = [ 'inline', 'udp', 'v4l2' ]
+webcam_modes : List[WebcamMode] = [ 'inline', 'srt' ]
 webcam_resolutions : List[str] = [ '320x240', '640x480', '800x600', '1024x768', '1280x720', '1280x960', '1920x1080', '2560x1440', '3840x2160' ]
 
 execution_provider_set : ExecutionProviderSet =\
