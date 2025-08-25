@@ -4,9 +4,9 @@ __pycache__
 .jobs
 .idea
 .vscode
-**/.assets
-**/__pycache__
-**/.caches
-**/.jobs
-**/.idea
-**/.vscode
+**/.assets/
+**/__pycache__/
+**/.caches/
+**/.jobs/
+**/.idea/
+**/.vscode/
