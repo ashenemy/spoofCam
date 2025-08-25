@@ -1,0 +1,12 @@
+__pycache__
+.assets
+.caches
+.jobs
+.idea
+.vscode
+**/.assets
+**/__pycache__
+**/.caches
+**/.jobs
+**/.idea
+**/.vscode
