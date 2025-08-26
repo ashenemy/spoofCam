@@ -3,8 +3,8 @@
 
 
 fps=30
-width=1280
-height=720
+width=720
+height=1280
 srt_opts="pkt_size=1316&latency=50&rcvlatency=50&peerlatency=50&maxbw=0&transtype=live"
 
 while [[ $# -gt 0 ]]; do
